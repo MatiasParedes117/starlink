@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --color-dark: #000000;
+}
+
+@layer components {
+  .btn-primary {
+    @apply w-full sm:w-auto bg-white text-black font-bold text-sm px-12 py-4 uppercase tracking-widest hover:bg-gray-200 transition-colors rounded-sm text-center inline-block;
+  }
+
+  .btn-secondary {
+    @apply w-full sm:w-auto border-2 border-white text-white font-bold text-sm px-12 py-4 uppercase tracking-widest hover:bg-white hover:text-black transition-colors rounded-sm text-center inline-block;
+  }
+
+  .section-title {
+    @apply text-3xl lg:text-5xl font-bold uppercase tracking-widest mb-6 leading-tight;
+  }
+
+  .section-text {
+    @apply text-gray-400 text-lg leading-relaxed mb-8;
+  }
+
+  .nav-link {
+    @apply hover:text-gray-300 transition-colors uppercase tracking-widest text-sm font-semibold;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Efecto oscuro para el navbar al hacer scroll */
+.navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
+}
+
+/* Ocultar barra de desplazamiento manteniendo funcionalidad */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #000;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
